@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DisasterScope – Natural Disaster Predictor</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <h1>🌍 DisasterScope – Natural Disaster Predictor</h1>
+  <div id="map"></div>
+  <div class="dashboard">
+    <div class="bar" id="bar-eq" title="Earthquake risk level. Click map for updates.">
+      <div class="bar-fill" id="fill-eq"></div>
+      <div class="bar-label">🌍 Earthquake</div>
+      <div class="bar-count" id="count-eq">0 nearby</div>
+    </div>
+    <div class="bar" id="bar-flood" title="Flood risk level. Click map for updates.">
+      <div class="bar-fill" id="fill-flood"></div>
+      <div class="bar-label">🌊 Flood</div>
+      <div class="bar-count" id="count-flood">0 nearby</div>
+    </div>
+    <div class="bar" id="bar-fire" title="Wildfire risk level. Click map for updates.">
+      <div class="bar-fill" id="fill-fire"></div>
+      <div class="bar-label">🔥 Wildfire</div>
+      <div class="bar-count" id="count-fire">0 nearby</div>
+    </div>
+  </div>
+
+  <button id="reset-btn">Reset Map</button>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
