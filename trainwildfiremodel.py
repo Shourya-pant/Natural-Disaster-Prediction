@@ -7,10 +7,8 @@ from sklearn.model_selection import train_test_split
 
 print("Starting wildfire model training...")
 
-data_path = "frontend/data/wildfires.csv"
-model_dir = "backend/models"
-os.makedirs(model_dir, exist_ok=True)
-model_path = os.path.join(model_dir, "wildfire_model.pkl")
+data_path = "wildfires.csv"
+model_path = "wildfire_model.pkl"
 
 df = pd.read_csv(data_path)
 

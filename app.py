@@ -6,18 +6,17 @@ import pandas as pd
 from math import radians, cos, sin, sqrt, atan2
 
 
-app = Flask(__name__, template_folder="templates", static_folder="static")
+app = Flask(__name__)
 
 
-model_dir = "backend/models"
-earthquake_model = pickle.load(open(os.path.join(model_dir, "earthquake_model.pkl"), "rb"))
-flood_model = pickle.load(open(os.path.join(model_dir, "flood_model.pkl"), "rb"))
-wildfire_model = pickle.load(open(os.path.join(model_dir, "wildfire_model.pkl"), "rb"))
+earthquake_model = pickle.load(open("earthquake_model.pkl", "rb"))
+flood_model = pickle.load(open("flood_model.pkl", "rb"))
+wildfire_model = pickle.load(open("wildfire_model.pkl", "rb"))
 
 
-earthquakes_df = pd.read_csv("frontend/data/earthquakes.csv")
-floods_df = pd.read_csv("frontend/data/floods.csv")
-wildfires_df = pd.read_csv("frontend/data/wildfires.csv")
+earthquakes_df = pd.read_csv("earthquakes.csv")
+floods_df = pd.read_csv("floods.csv")
+wildfires_df = pd.read_csv("wildfires.csv")
 
 wildfires_df['Fires'] = wildfires_df['Fires'].replace(',', '', regex=True).astype(int)
 

@@ -5,10 +5,8 @@ import pickle
 
 print("Starting flood model training...")
 
-csv_path = "frontend/data/floods.csv"
-model_dir = "backend/models"
-os.makedirs(model_dir, exist_ok=True)
-model_path = os.path.join(model_dir, "flood_model.pkl")
+csv_path = "floods.csv"
+model_path = "flood_model.pkl"
 
 df = pd.read_csv(csv_path)
 

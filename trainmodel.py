@@ -7,10 +7,8 @@ from sklearn.model_selection import train_test_split
 
 print("Starting earthquake model training...")
 
-data_path = "frontend/data/earthquakes.csv"
-model_dir = "backend/models"
-os.makedirs(model_dir, exist_ok=True)
-model_path = os.path.join(model_dir, "earthquake_model.pkl")
+data_path = "earthquakes.csv"
+model_path = "earthquake_model.pkl"
 
 df = pd.read_csv(data_path)
 
